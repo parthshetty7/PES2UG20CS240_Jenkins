@@ -1,10 +1,10 @@
-pipeline 
+pipeline {
     agent any
     stages {
         stage('Build') {
             steps {
                 sh 'g++ -o PES2UG20CS240-1 try.cpp'
-                echo "Build Successful"
+                pecho "Build Successful"
             }
         }
         stage('Test') {
@@ -15,7 +15,7 @@ pipeline
     }
     post {
         always {
-            echo 'Pipeline completed'
+            pecho 'Pipeline completed'
         }
         failure {
             echo 'Pipeline failed'
